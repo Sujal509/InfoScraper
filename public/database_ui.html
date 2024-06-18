@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Records Table</title>
+    <link rel="stylesheet" href="./styles/database_ui.css">
+    <script defer="defer" src="./scripts/database_ui.js"></script>
+</head>
+
+<body>
+    <center>
+        <h1 class="magnet">Database Records</h1>
+    </center>
+    <table id="table-body" border="1">
+        <tr>
+            <th>URL</th>
+            <th>About Page</th>
+            <th>Contact Page</th>
+        </tr>
+    </table>
+    <!-- <script>
+        let tableBody;
+        fetch("/records")
+            .then((t => t.json()))
+            .then((t => {
+                tableBody = document.getElementById("table-body"), t.forEach((t => {
+                    const e = tableBody.insertRow();
+                    e.insertCell(0).innerHTML = `<a href="${t.page}" rel="noopener noreferrer" target="_blank">${t.page}</a>`;
+                    for (let iterator of t.data.aboutLinks) {
+                        e.insertCell(1).insertAdjacentHTML = `<li><a href="${iterator}" rel="noopener noreferrer" target="_blank">${iterator}</a>`;
+                        
+                    }
+                    for (let iterator of t.data.contactLinks) {
+                        
+                        e.insertCell(2).insertAdjacentHTML = `<li><a href="${iterator}" rel="noopener noreferrer" target="_blank">${iterator}</a>`
+                    }
+                }))
+            }))</script> -->
+
+    <script>
+        let tableBody;
+        fetch("/records")
+            .then(response => response.json())
+            .then(data => {
+                tableBody = document.getElementById("table-body");
+                data.forEach(record => {
+                    const row = tableBody.insertRow();
+                    row.insertCell(0).innerHTML = `<a href="${record.page}" rel="noopener noreferrer" target="_blank">${record.page}</a>`;
+
+                    const aboutCell = row.insertCell(1);
+                    record.data.aboutLinks.forEach(link => {
+                        aboutCell.insertAdjacentHTML('beforeend', `<li><a href="${link}" rel="noopener noreferrer" target="_blank">${link}</a></li>`);
+                    });
+
+                    const contactCell = row.insertCell(2);
+                    record.data.contactLinks.forEach(link => {
+                        contactCell.insertAdjacentHTML('beforeend', `<li><a href="${link}" rel="noopener noreferrer" target="_blank">${link}</a></li>`);
+                    });
+                });
+            });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>LinkScraper</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js">
+    <link href="./styles/index_style.css" rel="stylesheet">
+    <script defer="defer" src="./scripts/index_script.js"></script>
+</head>
+
+<body>
+    <div id="main">
+        <div id="home">
+            <div id="nav">
+                <div class="magnet">Scraper</div>
+                <div id="right"><button><a href="./showdatabase">View
+                            Database</a></button></div>
+            </div>
+            <div id="homemain">
+                <h2>What we get for you.</h2>
+                <div class="headings">
+                    <h2 class="hvr">About</h2>
+                    <h2 class="hvr">Contact</h2>
+                </div>
+            </div>
+            <div id="homelast">
+                <p>Our final year project centers around the implementation of state-of-the-art web scraping technology designed to extract crucial information from user-specified websites. Specifically, our focus is on scraping the the 'about' and 'contact' pages, with the subsequent storage of this valuable information within our secure database.</p>
+            </div>
+        </div>
+        <div id="methods">
+            <div class="mheading">
+                <h1>Research</h1>
+                <h1>Methods</h1>
+            </div>
+            <table style="margin-top:4vw;justify-content:space-between">
+                <tr>
+                    <td class="mleftelm" style="padding-right:25px">
+                        <h3>Method 1</h3>
+                        <h2>In our first method, our approach involves the initial extraction of all &lt;a&gt; tags from the specified website. Subsequently, a robust regular expression is employed to identify relevant href attributes, utilizing commonly used keywords within the website's path. By concatenating the base URL with these keywords, we construct potential URLs, and the regular expression is applied to filter and identify matches. Upon successful identification, the corresponding href (url + keyword) is returned, facilitating the extraction of targeted information.
+                        </h2>
+                        <h4><a href="/module1">click here</a></h4>
+                    </td>
+                    <td class="mleftelm" style="padding-right:25px">
+                        <h3>Method 2</h3>
+                        <h2>In our second method, we initiate the process by loading all &lt;a&gt; tags from the designated website. We meticulously examine their inner content, utilizing the specific words 'about' and 'contact'. Through the implementation of a discerning regular expression, we discern matches that align with our predefined criteria. Upon identifying a match, the corresponding href is returned, signifying the successful detection of relevant information.<br><br>&nbsp;
+                        </h2>
+                        <h4><a href="/module2">click here</a></h4>
+                    </td>
+                    <td class="mleftelm last" style="padding-right:25px">
+                        <h3>Method 3</h3>
+                        <h2>In our third method, we adopt a refined approach by sending requests to each URL, incorporating a designated keyword as an endpoint. The emphasis lies in the meticulous selection of URLs with a 200 response code, indicative of a successful server response. This method streamlines the identification process, ensuring that the URLs chosen for further exploration are likely to contain the sought-after 'about' and 'contact' pages.<br><br>&nbsp;
+                        </h2>
+                        <h4><a href="/module3">click here</a></h4>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div>
+        <footer>
+            <div class="names">
+                <h4>Design and Developed by</h4>
+                <ul>
+                    <li><a href="https://github.com/Sujal509">Sujal</a></li>
+                    <li><a href="https://github.com/kaustubhrprabhu">Kaustubh</a></li>
+                    <li><a href="https://github.com/siddheshspawar">Siddhesh</a></li>
+                </ul>
+            </div>
+            <div class="sitemaplinks">
+                <h4>Sitemap</h4>
+                <ul>
+                    <li><a href="/module1">Module1</a></li>
+                    <li><a href="/module2">Module2</a></li>
+                    <li><a href="/module3">Module3</a></li>
+                    <li><a href="/showdatabase">Database</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
