@@ -24,4 +24,12 @@ cd InfoScraper
 ./install_dependencies.ps1
 ```
 4.Create a `.env` file and add your mongodb cluster url
-5.Start the Scraper by running `start_scraper.ps1` or `npm start`
+
+5.Start the Scraper by running
+```bash
+./start_scraper.ps1
+```
+or 
+```bash
+npm start
+```
